@@ -1,0 +1,258 @@
+html ,body
+{
+	height: 100%;
+}
+body {
+    background: #59ABE3;
+    margin: 0;
+}
+.container
+{
+	  height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form {
+    width: 700px;
+    height: 540px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+h2 {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    width: 180px;
+    color: #78788c;
+    border-bottom: 3px solid #78788c;
+}
+input {
+    width:248px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+    border-bottom: 2px solid #bebed2;
+}
+input:focus {
+    border-bottom: 2px solid #78788c;
+}
+#exdate
+{
+    display: flex;
+}
+#exdate input
+{
+    width:122px;
+}
+p:before {
+    content: attr(type);
+    display: block;
+    margin: 28px 0 0;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+button {
+    float: right;
+    padding: 8px 12px;
+    margin: 8px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #78788c;
+    background: 0;
+    color: #5a5a6e;
+    cursor: pointer;
+    transition: all .3s;
+}
+button:hover {
+    background: #78788c;
+    color: #fff;
+}
+.form_wrapper
+{
+    width:40%;
+		position: relative;
+}
+span {
+    margin: 0 5px 0 15px;
+}
+.wrapper
+{
+    display: flex;
+}
+.form_visual
+{
+    width:60%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 20px;
+}
+.front_card
+{
+    margin: auto;
+    width: 370px;
+    height: 215px;
+    background-image: linear-gradient(-90deg, #041e47e6, #536680cc);
+    border-radius: 12px;
+    box-shadow:  1px 1px 20px 5px #938888;
+    position: relative;
+}
+.card_filler
+{
+margin: auto;
+width: 100%;
+height: 50%;
+position: absolute;
+bottom: 0px;
+}
+.card_filler_input
+{
+width: 100%;
+border: none;
+padding-left: 40px;
+padding-right: 40px;
+font-size: 25px;
+text-align: center;
+color: #b9afaf;
+}
+.card_filler_input:focus
+{
+  border:none;
+}
+.card_look
+{
+    margin: auto;
+    width:100%;
+    height: 50%;
+    position: absolute;
+    top:0px;
+}
+.chip
+{
+    width:52px;
+    height: 44px;
+    position: absolute;
+    left:40px;
+    top:49px;
+}
+.chip img
+{
+    width:100%;
+    height: 100%;
+}
+.card_name
+{
+    width: 100%;
+
+height: 40px;
+
+text-align: end;
+}
+.smartphone {
+  position: relative;
+  width: 180px;
+  height: 260px;
+  margin: auto;
+  border: 16px #509acd solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+	box-shadow: 0px 0px 29px 6px #888888;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:#e6e6e666;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #e6e6e666;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 100%;
+  height: 100%;
+  background: white;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+}
+.message {
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 15px 10px;
+    padding: 15px 20px;
+    position: relative;
+}
+.message.from {
+    background-color: #E5E4E9;
+    color: #363636;
+		width: 100px;
+		height: 20px;
+		position: absolute;
+		bottom: 25px;
+}
+.message.from + .message.from
+{
+  margin-top: -7px;
+}
+.message:before {
+    border-color: #2095FE;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip: rect(20px, 35px, 42px, 0px);
+    content: " ";
+    height: 40px;
+    position: absolute;
+    right: -50px;
+    width: 30px;
+    z-index: 0;
+}
+.message.from:before {
+    border-color: #E5E4E9;
+    left: -50px;
+    transform: rotateY(180deg);
+}
+.no_click
+{
+    pointer-events: none;
+    opacity: 0.4;
+}

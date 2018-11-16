@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+  </head>
+  <body>
+    <div class="container">
+    <form class="form" method="post" action="{% url 'cvv_otp_check:otp' %}">
+        {% csrf_token %}
+      <h2>PAYMENT</h2>
+      <div class="wrapper">
+        <div class="form_wrapper" style="margin-top: 23px;">
+            {% for message in messages %}
+            <div style='position: absolute;font-size: 15px;font-family: monospace; color: #d46262;'>
+            {{ message }}
+            </div>
+        {% endfor %}
+      <p type="One Time Password:">
+        <input placeholder="Enter the OTP.." type="text" maxlength='4' id="form_otp" name="otp"  ></input>
+      </p>
+      <button style="bottom: 0px;position: absolute;right: 0px;" id="sub" class="no_click" name="submit_butt" value="sub">SUBMIT</button>
+      <button style="bottom: 0px;position: absolute;left: 0px;" id="res" name="resend_butt"value="res">RESEND</button>
+    </div>
+    <div class="form_visual">
+      <div class="smartphone">
+        <div class="content">
+        <div class="message from" id="otp_number">OTP is </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </form>
+  </div>
+  <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+  <script src="{% static "js/jquery.js"%}"></script>
+  <script src="{% static "js/otp.js"%}"></script>
+
+  
+
+  </body>
+</html>

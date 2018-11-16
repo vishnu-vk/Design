@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+  </head>
+  <body>
+    <div class="container">
+    <form class="form" method="POST">
+      {% csrf_token %}
+      <h2>PAYMENT</h2>
+      <div class="wrapper">
+      <div class="form_wrapper">
+        {% for message in messages %}
+            <div style='position: absolute;font-size: 15px;font-family: monospace; color: #d46262;'>
+            {{ message }}
+            </div>
+        {% endfor %}
+        <p type="CARD NO:">
+          <input placeholder="Enter the Card number.." type="text" name="number" maxlength='19' value="" required></input>
+        </p>
+        <p type="HOLDER'S NAME:">
+          <input placeholder="Enter the Card holder's name.." name="name"type="text" maxlength='30'value=""required></input>
+        </p>
+        <p type="CVV:">
+          <input placeholder="Enter the CVV code.." type="text" name="cvc" maxlength='3'value=""required></input>
+        </p>
+        <p type="EXPIRY DATE:">
+          <div id="exdate">
+          <input placeholder="MM" type="text" name="mm" maxlength='2'value=""required></input>
+          <input placeholder="YYYY" type="text" name="yyyy" maxlength='4'value=""required></input>
+          </div>
+        </p>
+      </div>
+      <div class="form_visual">
+      </div>
+    </div>
+    <button>SUBMIT</button>
+    </form>
+  </div>
+  <script src="{% static "js/jquery.js"%}"></script>
+  <script src="{% static "js/card.js"%}"></script>
+  <script>
+    $('form').card({
+      container: '.form_visual',
+      formSelectors: {
+      expiryInput: 'input[name="mm"], input[name="yyyy"]',
+      },
+      messages: {
+      validDate: 'valid\ndate',
+      monthYear: 'mm/yyyy',
+      },
+
+      placeholders: {
+      number: '•••• •••• •••• ••••',
+      name: 'Full Name',
+      expiry: '••/••',
+      cvc: '•••'
+      },
+      formatting: true,
+      debug: true
+      });
+
+  </script>
+  </body>
+</html>
